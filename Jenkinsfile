@@ -31,10 +31,10 @@ pipeline{
         }
         stage("Python"){
             agent{
-                docker { image 'learningmw1991/my_print_exec:01' }
+                docker { image 'learningmw1991/my_print_exec:03' }
             }
             steps{
-                sh 'docker run -it learningmw1991/my_print_exec:01'
+                sh 'python /app/print.py'
             }
         }
         stage('node') {
