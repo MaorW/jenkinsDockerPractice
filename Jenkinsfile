@@ -24,8 +24,10 @@ pipeline{
     stages{
         stage("Cleaning workspace")
         {
-            // Clean before build
-            cleanWs()
+            steps{
+                // Clean before build
+                cleanWs()
+            }
         }
         stage("Python"){
             agent{
