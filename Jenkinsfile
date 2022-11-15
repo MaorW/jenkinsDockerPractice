@@ -23,10 +23,10 @@ pipeline{
     agent any
     stages{
         stage("Python"){
+            agent{
+                docker { image 'learningmw1991/my_print_exec:01' }
+            }
             steps{
-                agent{
-                    docker { image 'learningmw1991/my_print_exec:01' }
-                }
                 sh 'docker run -it learningmw1991/my_print_exec:01'
             }
         }
@@ -35,7 +35,7 @@ pipeline{
                 docker { image 'node:16.13.1-alpine' }
             }
             steps {
-            sh 'node --version'
+                sh 'node --version'
             }
         }
     }
