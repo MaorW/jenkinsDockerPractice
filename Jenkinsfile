@@ -22,6 +22,11 @@
 pipeline{
     agent any
     stages{
+        stage("Cleaning workspace")
+        {
+            // Clean before build
+            cleanWs()
+        }
         stage("Python"){
             agent{
                 docker { image 'learningmw1991/my_print_exec:01' }
